@@ -6,7 +6,7 @@ import TextInput from '@/Components/TextInput';
 import GuestLayout from '@/Layouts/GuestLayout';
 import { Link, useForm } from '@inertiajs/react';
 import { FormEventHandler } from 'react';
-import Alert from '@/ui/alerts/Alert';
+import {Alert} from '@/ui/alerts/Alert';
 
 export default function Login() {
     const { data, setData, post, processing, errors, reset } = useForm({

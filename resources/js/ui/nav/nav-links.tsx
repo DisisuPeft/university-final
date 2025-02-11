@@ -3,6 +3,7 @@ import { Link } from "@inertiajs/react";
 import { User } from "@/types";
 import {usePage} from "@inertiajs/react";
 import { clsx } from "clsx";
+
 type navlinksProps = {
     auth: {
         user: User,

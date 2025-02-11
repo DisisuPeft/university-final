@@ -17,6 +17,16 @@ export interface Permission {
     name: string
 }
 
+export interface Gender {
+    id: number,
+    name: string
+}
+
+export interface NivEdu {
+    id: number,
+    name: string,
+}
+
 export type PageProps<
     T extends Record<string, unknown> = Record<string, unknown>,
 > = T & {

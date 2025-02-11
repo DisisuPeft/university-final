@@ -28,7 +28,11 @@ return new class extends Migration
             $table->integer('status')->nullable();
             $table->unsignedBigInteger('user_tutor_id');
             $table->string('image')->nullable(); 
+            $table->unsignedBigInteger('niv_edu');
+            $table->longText("perfil_ingreso");
+            $table->longText("perfil_egreso");
             $table->timestamps();
+            //perfil de ingreso, perfil de egreso, nivel educativo(opcional)
         });
     }
 

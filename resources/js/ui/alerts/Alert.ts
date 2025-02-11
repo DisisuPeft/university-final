@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-export default function Alert(title: string, icon: "success" | "error" | "warning" | "info" | "question"){
+export const Alert = (title: string, icon: "success" | "error" | "warning" | "info" | "question") => {
   const toast = Swal.mixin({
     // toast: true,
     // position: "top-end",
@@ -31,5 +31,13 @@ export default function Alert(title: string, icon: "success" | "error" | "warnin
   toast.fire({
     icon: icon,
     title: title,
+  });
+}
+
+export const notify = (title: string, text: string, icon: "success" | "error" | "warning" | "info" | "question") => {
+  Swal.fire({
+    title: title,
+    text: text,
+    icon: icon
   });
 }

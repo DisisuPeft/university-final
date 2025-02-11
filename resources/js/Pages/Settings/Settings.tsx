@@ -4,23 +4,21 @@ import { useState } from "react"
 import Edit from "../Profile/Edit";
 import { usePage } from "@inertiajs/react";
 import Users from "./Admin/Users";
-import { PageProps } from "@/types";
+import { Gender, NivEdu, Permission, Role, User } from "@/types";
 
-export default function Settings({users}: {users: PageProps<{users: []}>}){
+export default function Settings({users, gender, nivedu, roles, permissions}: {users: User [], gender: Gender [], nivedu: NivEdu [], roles: Role [], permissions: Permission []}){
     const [activeTab, setActivateTab] = useState("profile");
     const auth = usePage().props.auth
-    console.log(users)
     const tabs = [
         {id: "profile", label:"Perfil", canaccess: [1,2,3]},
         {id: "users", label:"Usuarios", canaccess: [1]},
-    ]
-
+    ]   
     const renderTabContent = (tab_id: string) => {
         switch(tab_id){
             case "profile":
                 return <Edit />
             case "users":
-                return <Users />
+                return <Users gender={gender} nivedu={nivedu} users={users} roles={roles} permissions={permissions} />
         }
     }
     return (

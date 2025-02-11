@@ -26,4 +26,5 @@ class Gender extends Model
 	protected $fillable = [
 		'name'
 	];
+
 }

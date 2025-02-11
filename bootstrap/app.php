@@ -14,9 +14,13 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->web(append: [
             \App\Http\Middleware\HandleInertiaRequests::class,
             \Illuminate\Http\Middleware\AddLinkHeadersForPreloadedAssets::class,
+            // \App\Http\Middleware\Authenticate::class,
         ]);
+        // $middleware->append(\App\Http\Middleware\Authenticate::class);
+        $middleware->redirectGuestsTo('/');
         $middleware->alias([
             'role' => \App\Http\Middleware\CheckRole::class,
+            'auth' => \App\Http\Middleware\Authenticate::class,
         ]);
         //
     })
